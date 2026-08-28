@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alight Motion Premium | Aktivasi Resmi</title>
+<meta name="description" content="Aktivasi Alight Motion Premium cepat, aman, dan terpercaya." />
+<style>
+  :root{
+    --bg-1: #0a0a12;
+    --bg-2: #14101f;
+    --accent: #a855f7;
+    --accent-2: #6366f1;
+    --accent-glow: rgba(168, 85, 247, 0.45);
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --text-1: #f5f3ff;
+    --text-2: #b8b3c9;
+    --success: #22c55e;
+    --error: #ef4444;
+    --warn: #f59e0b;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(168,85,247,0.18), transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(99,102,241,0.15), transparent 40%),
+      linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    background-attachment: fixed;
+    color: var(--text-1);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== Background floating orbs ===== */
+  .orb{
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    z-index: 0;
+    animation: float 12s ease-in-out infinite;
+  }
+  .orb-1{ width: 300px; height:300px; background: var(--accent); top:-100px; left:-80px; }
+  .orb-2{ width: 250px; height:250px; background: var(--accent-2); bottom:5%; right:-60px; animation-delay: -6s; }
+
+  @keyframes float{
+    0%,100%{ transform: translateY(0) translateX(0); }
+    50%{ transform: translateY(-30px) translateX(20px); }
+  }
+
+  .wrap{ position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* ===== Navbar ===== */
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 18px 20px;
+    position: sticky; top:0; z-index: 50;
+    backdrop-filter: blur(16px);
+    background: rgba(10,10,18,0.55);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .logo{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.1rem; letter-spacing:0.5px; }
+  .logo-badge{
+    width:34px; height:34px; border-radius:10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px; box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .nav-links{ display:flex; gap:22px; }
+  .nav-links a{
+    color: var(--text-2); text-decoration:none; font-size:0.9rem;
+    transition: color .25s ease;
+  }
+  .nav-links a:hover{ color: var(--text-1); }
+
+  /* ===== Hero ===== */
+  .hero{
+    text-align:center;
+    padding: 90px 20px 60px;
+    animation: fadeUp .8s ease both;
+  }
+  .badge-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 6px 16px; border-radius: 999px;
+    background: var(--glass-bg); border:1px solid var(--glass-border);
+    font-size: 0.78rem; color: var(--text-2); margin-bottom: 22px;
+    backdrop-filter: blur(10px);
+  }
+  .dot-pulse{
+    width:8px; height:8px; border-radius:50%; background: var(--success);
+    box-shadow: 0 0 8px var(--success);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.3;} }
+
+  .hero h1{
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    font-weight: 800; line-height:1.15; margin-bottom: 18px;
+    background: linear-gradient(135deg, #ffffff 20%, var(--accent) 70%, var(--accent-2));
+    -webkit-background-clip: text; background-clip:text; color: transparent;
+  }
+  .hero p{
+    color: var(--text-2); font-size: clamp(0.95rem, 2vw, 1.1rem);
+    max-width: 560px; margin: 0 auto 32px;
+  }
+  .hero-cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  .btn{
+    border:none; cursor:pointer; font-size:0.95rem; font-weight:600;
+    padding: 14px 28px; border-radius: 14px;
+    transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    font-family: inherit;
+  }
+  .btn-primary{
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: white; box-shadow: 0 8px 30px var(--accent-glow);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 12px 36px var(--accent-glow); }
+  .btn-primary:active{ transform: translateY(0); }
+  .btn-ghost{
+    background: var(--glass-bg); border:1px solid var(--glass-border);
+    color: var(--text-1); backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover{ background: rgba(255,255,255,0.1); }
+  .btn:disabled{ opacity:0.55; cursor:not-allowed; transform:none !important; }
+
+  /* ===== Section shared ===== */
+  section{ padding: 60px 0; position:relative; z-index:1; }
+  .section-title{ text-align:center; margin-bottom: 42px; }
+  .section-title h2{ font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight:800; margin-bottom:8px; }
+  .section-title p{ color: var(--text-2); font-size:0.95rem; }
+
+  /* ===== Glass card ===== */
+  .glass{
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  /* ===== Pricing ===== */
+  .pricing-grid{
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .price-card{
+    padding: 28px 22px; position:relative; overflow:hidden;
+    transition: transform .3s ease, border-color .3s ease;
+    cursor:pointer;
+  }
+  .price-card:hover{ transform: translateY(-6px); border-color: rgba(168,85,247,0.5); }
+  .price-card.popular{ border-color: var(--accent); }
+  .popular-tag{
+    position:absolute; top:14px; right:14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    font-size:0.68rem; font-weight:700; padding:4px 10px; border-radius:999px;
+    letter-spacing:0.4px;
+  }
+  .price-card h3{ font-size:1.1rem; margin-bottom:6px; }
+  .price-card .price{ font-size:2rem; font-weight:800; margin: 10px 0 4px; }
+  .price-card .price span{ font-size:0.85rem; color: var(--text-2); font-weight:400; }
+  .price-card ul{ list-style:none; margin: 18px 0; display:flex; flex-direction:column; gap:9px; }
+  .price-card li{ font-size:0.85rem; color: var(--text-2); display:flex; gap:8px; align-items:flex-start; }
+  .price-card li::before{ content:"✓"; color: var(--success); font-weight:700; }
+  .price-select-btn{ width:100%; }
+
+  /* ===== Order Form ===== */
+  .order-box{ max-width: 520px; margin: 0 auto; padding: 34px 28px; }
+  .field{ margin-bottom: 18px; text-align:left; }
+  .field label{ display:block; font-size:0.82rem; color: var(--text-2); margin-bottom:7px; }
+  .field input, .field select{
+    width:100%; padding: 13px 14px; border-radius: 12px;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+    color: var(--text-1); font-size:0.92rem; font-family: inherit;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .field input:focus, .field select:focus{
+    outline:none; border-color: var(--accent); background: rgba(255,255,255,0.08);
+  }
+  .field select option{ background: var(--bg-2); color: var(--text-1); }
+  .field small.err{ color: var(--error); font-size:0.75rem; display:none; margin-top:6px; }
+  .field.invalid input{ border-color: var(--error); }
+  .field.invalid small.err{ display:block; }
+
+  #orderBtn{ width:100%; margin-top:8px; display:flex; align-items:center; justify-content:center; gap:10px; }
+  .spinner{
+    width:16px; height:16px; border-radius:50%;
+    border: 2px solid rgba(255,255,255,0.4); border-top-color: white;
+    animation: spin .7s linear infinite; display:none;
+  }
+  .spinner.show{ display:inline-block; }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  /* ===== Status ===== */
+  .status-box{ max-width: 520px; margin: 0 auto; padding: 30px 28px; text-align:left; }
+  .status-row{ display:flex; align-items:center; gap:12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .status-row:last-child{ border-bottom:none; }
+  .status-icon{ width:34px; height:34px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0; }
+  .status-icon.pending{ background: rgba(245,158,11,0.15); color: var(--warn); }
+  .status-icon.success{ background: rgba(34,197,94,0.15); color: var(--success); }
+  .status-icon.error{ background: rgba(239,68,68,0.15); color: var(--error); }
+  .status-label{ font-size:0.9rem; font-weight:600; }
+  .status-sub{ font-size:0.78rem; color: var(--text-2); }
+  #statusEmpty{ text-align:center; color: var(--text-2); font-size:0.88rem; padding: 10px 0; }
+
+  /* ===== FAQ ===== */
+  .faq-item{ margin-bottom: 12px; overflow:hidden; }
+  .faq-q{
+    padding: 18px 22px; display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; font-weight:600; font-size:0.92rem; gap:12px;
+  }
+  .faq-q .chevron{ transition: transform .3s ease; color: var(--accent); flex-shrink:0; }
+  .faq-item.open .chevron{ transform: rotate(180deg); }
+  .faq-a{
+    max-height:0; overflow:hidden; transition: max-height .35s ease, padding .35s ease;
+    padding: 0 22px; color: var(--text-2); font-size:0.85rem; line-height:1.6;
+  }
+  .faq-item.open .faq-a{ max-height: 220px; padding: 0 22px 18px; }
+
+  /* ===== WhatsApp Floating ===== */
+  .wa-float{
+    position: fixed; bottom: 22px; right: 22px; z-index: 60;
+    width: 58px; height:58px; border-radius: 50%;
+    background: linear-gradient(135deg, #25D366, #1ebe5b);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 8px 26px rgba(37,211,102,0.5);
+    text-decoration:none; font-size: 26px;
+    animation: floatBtn 3s ease-in-out infinite;
+  }
+  @keyframes floatBtn{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-6px); } }
+
+  /* ===== Toast ===== */
+  #toastContainer{
+    position: fixed; top: 20px; right: 20px; z-index: 100;
+    display:flex; flex-direction:column; gap:10px; max-width: 90vw;
+  }
+  .toast{
+    display:flex; align-items:center; gap:10px;
+    padding: 14px 18px; border-radius: 14px; min-width: 260px; max-width: 340px;
+    background: rgba(20,16,31,0.9); border:1px solid var(--glass-border);
+    backdrop-filter: blur(16px); font-size:0.85rem;
+    animation: slideIn .35s ease both;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .toast.hide{ animation: slideOut .3s ease forwards; }
+  @keyframes slideIn{ from{ opacity:0; transform: translateX(40px); } to{ opacity:1; transform: translateX(0); } }
+  @keyframes slideOut{ to{ opacity:0; transform: translateX(40px); } }
+  .toast-icon{ font-size:18px; }
+  .toast.success .toast-icon{ color: var(--success); }
+  .toast.error .toast-icon{ color: var(--error); }
+  .toast.info .toast-icon{ color: var(--accent); }
+
+  footer{ text-align:center; padding: 40px 20px; color: var(--text-2); font-size:0.8rem; }
+
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(24px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  .fade-in{ animation: fadeUp .7s ease both; }
+
+  @media (max-width: 600px){
+    .nav-links{ display:none; }
+    .hero{ padding: 60px 16px 40px; }
+    section{ padding: 44px 0; }
+    .order-box, .status-box{ padding: 26px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div id="toastContainer"></div>
+
+<nav>
+  <div class="logo">
+    <div class="logo-badge">⚡</div>
+    Alight<span style="color:var(--accent)">PRO</span>
+  </div>
+  <div class="nav-links">
+    <a href="#pricing">Paket</a>
+    <a href="#order">Order</a>
+    <a href="#status">Status</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="badge-pill"><span class="dot-pulse"></span> Layanan aktif &amp; sedang online</div>
+  <h1>Alight Motion Premium<br/>Aktivasi Cepat &amp; Aman</h1>
+  <p>Edit video tanpa watermark, buka semua fitur premium. Order diproses tim admin kami secara resmi.</p>
+  <div class="hero-cta">
+    <a href="#pricing" class="btn btn-primary">Lihat Paket</a>
+    <a href="#faq" class="btn btn-ghost">Cara Kerja</a>
+  </div>
+</header>
+
+<section id="pricing" class="wrap">
+  <div class="section-title">
+    <h2>Pilih Paket Kamu</h2>
+    <p>Semua paket sudah termasuk aktivasi penuh fitur premium.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="glass price-card" data-package="7-days" data-label="7 Hari">
+      <h3>7 Hari</h3>
+      <div class="price">Rp 15.000 <span>/paket</span></div>
+      <ul>
+        <li>Semua fitur premium aktif</li>
+        <li>Tanpa watermark</li>
+        <li>Cocok untuk coba dulu</li>
+      </ul>
+      <button class="btn btn-ghost price-select-btn">Pilih Paket</button>
+    </div>
+
+    <div class="glass price-card popular" data-package="30-days" data-label="30 Hari">
+      <span class="popular-tag">TERPOPULER</span>
+      <h3>30 Hari</h3>
+      <div class="price">Rp 35.000 <span>/paket</span></div>
+      <ul>
+        <li>Semua fitur premium aktif</li>
+        <li>Tanpa watermark</li>
+        <li>Hemat dibanding harian</li>
+        <li>Support prioritas</li>
+      </ul>
+      <button class="btn btn-primary price-select-btn">Pilih Paket</button>
+    </div>
+
+    <div class="glass price-card" data-package="90-days" data-label="90 Hari">
+      <h3>90 Hari</h3>
+      <div class="price">Rp 89.000 <span>/paket</span></div>
+      <ul>
+        <li>Semua fitur premium aktif</li>
+        <li>Tanpa watermark</li>
+        <li>Paling hemat jangka panjang</li>
+      </ul>
+      <button class="btn btn-ghost price-select-btn">Pilih Paket</button>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="wrap">
+  <div class="section-title">
+    <h2>Form Order</h2>
+    <p>Isi data di bawah, proses aktivasi berjalan otomatis.</p>
+  </div>
+  <form id="orderForm" class="glass order-box fade-in" novalidate>
+    <div class="field" id="nameField">
+      <label for="nameInput">Nama</label>
+      <input type="text" id="nameInput" placeholder="Nama lengkap kamu" autocomplete="name" />
+      <small class="err">Nama wajib diisi (minimal 2 karakter).</small>
+    </div>
+    <div class="field" id="emailField">
+      <label for="emailInput">Email</label>
+      <input type="email" id="emailInput" placeholder="email@example.com" autocomplete="email" />
+      <small class="err">Masukkan format email yang valid.</small>
+    </div>
+    <div class="field">
+      <label for="optionsInput">Options API <small style="opacity:.65;">(opsional)</small></label>
+      <input type="text" id="optionsInput" placeholder="Kosongkan untuk memakai paket" />
+    </div>
+    <div class="field">
+      <label for="urlInput">URL API <small style="opacity:.65;">(opsional)</small></label>
+      <input type="url" id="urlInput" placeholder="https://..." />
+    </div>
+    <div class="field" id="packageField">
+      <label for="packageInput">Paket</label>
+      <select id="packageInput">
+        <option value="7-days">7 Hari — Rp 15.000</option>
+        <option value="30-days" selected>30 Hari — Rp 35.000</option>
+        <option value="90-days">90 Hari — Rp 89.000</option>
+      </select>
+    </div>
+    <button type="submit" id="orderBtn" class="btn btn-primary">
+      <span class="spinner" id="orderSpinner"></span>
+      <span id="orderBtnText">ORDER SEKARANG</span>
+    </button>
+  </form>
+</section>
+
+<section id="status" class="wrap">
+  <div class="section-title">
+    <h2>Status Pesanan</h2>
+    <p>Masukkan email yang kamu pakai saat order untuk cek status.</p>
+  </div>
+  <div class="glass status-box fade-in" style="max-width:520px;">
+    <form id="statusForm" style="display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;">
+      <input type="email" id="statusEmailInput" placeholder="email@example.com" required
+        style="flex:1; min-width:180px; padding:13px 14px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid var(--glass-border); color:var(--text-1); font-size:0.92rem; font-family:inherit;" />
+      <button type="submit" class="btn btn-primary" style="white-space:nowrap;">Cek Status</button>
+    </form>
+    <div id="statusBox">
+      <div id="statusEmpty">Masukkan email untuk melihat status pesanan kamu.</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="wrap">
+  <div class="section-title">
+    <h2>Pertanyaan Umum</h2>
+    <p>Hal-hal yang sering ditanyakan pelanggan.</p>
+  </div>
+  <div style="max-width:640px; margin:0 auto;">
+    <div class="glass faq-item">
+      <div class="faq-q">Berapa lama proses aktivasi? <span class="chevron">▾</span></div>
+      <div class="faq-a">Proses aktivasi umumnya berjalan otomatis dalam beberapa menit setelah order dikonfirmasi sistem.</div>
+    </div>
+    <div class="glass faq-item">
+      <div class="faq-q">Apakah aman untuk akun saya? <span class="chevron">▾</span></div>
+      <div class="faq-a">Kami hanya memproses aktivasi sesuai mekanisme resmi yang tersedia dan tidak meminta password akun kamu.</div>
+    </div>
+    <div class="glass faq-item">
+      <div class="faq-q">Metode pembayaran apa saja yang tersedia? <span class="chevron">▾</span></div>
+      <div class="faq-a">Silakan hubungi admin melalui tombol WhatsApp untuk info metode pembayaran yang tersedia saat ini.</div>
+    </div>
+    <div class="glass faq-item">
+      <div class="faq-q">Order saya gagal, apa yang harus dilakukan? <span class="chevron">▾</span></div>
+      <div class="faq-a">Coba ulangi order beberapa saat lagi. Jika masih gagal, hubungi admin via WhatsApp dengan menyertakan email yang kamu gunakan.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 AlightPRO. Layanan pihak ketiga tidak berafiliasi resmi dengan Alight Motion / InShot Inc.
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/6281234567890?text=Halo%20admin%2C%20saya%20mau%20tanya%20soal%20Alight%20Motion%20Premium" target="_blank" rel="noopener" title="Chat Admin WhatsApp">💬</a>
+
+<script>
+(function(){
+  "use strict";
+
+  const API_BASE = ""; // same origin; backend serves this file too
+
+  /* ===== Toast ===== */
+  function toast(message, type = "info", timeout = 3800){
+    const container = document.getElementById("toastContainer");
+    const el = document.createElement("div");
+    el.className = `toast ${type}`;
+    const icon = type === "success" ? "✓" : type === "error" ? "✕" : "ℹ";
+    el.innerHTML = `<span class="toast-icon">${icon}</span><span>${message}</span>`;
+    container.appendChild(el);
+    setTimeout(() => {
+      el.classList.add("hide");
+      setTimeout(() => el.remove(), 300);
+    }, timeout);
+  }
+
+  /* ===== Pricing selection sync ===== */
+  const packageSelect = document.getElementById("packageInput");
+  document.querySelectorAll(".price-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const pkg = card.getAttribute("data-package");
+      packageSelect.value = pkg;
+      document.getElementById("order").scrollIntoView({ behavior: "smooth" });
+      toast(`Paket "${card.getAttribute("data-label")}" dipilih`, "info", 2200);
+    });
+  });
+
+  /* ===== FAQ accordion ===== */
+  document.querySelectorAll(".faq-item").forEach(item => {
+    item.querySelector(".faq-q").addEventListener("click", () => {
+      const isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
+      if (!isOpen) item.classList.add("open");
+    });
+  });
+
+  /* ===== Email validation ===== */
+  function isValidEmail(email){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  /* ===== Status pesanan (fetch dari backend by email) ===== */
+  const statusBox = document.getElementById("statusBox");
+  const statusForm = document.getElementById("statusForm");
+  const statusEmailInput = document.getElementById("statusEmailInput");
+
+  const statusLabelMap = {
+    pending: { label: "Menunggu diproses", cls: "pending", icon: "⏳" },
+    processing: { label: "Sedang diproses", cls: "pending", icon: "⚙️" },
+    completed: { label: "Selesai", cls: "success", icon: "✓" },
+    rejected: { label: "Ditolak", cls: "error", icon: "✕" },
+  };
+
+  function renderOrders(orders){
+    if (!orders || orders.length === 0){
+      statusBox.innerHTML = '<div id="statusEmpty">Tidak ada pesanan ditemukan untuk email ini.</div>';
+      return;
+    }
+    statusBox.innerHTML = orders.map(o => {
+      const meta = statusLabelMap[o.status] || statusLabelMap.pending;
+      const time = new Date(o.createdAt).toLocaleString("id-ID");
+      return `
+        <div class="status-row">
+          <div class="status-icon ${meta.cls}">${meta.icon}</div>
+          <div>
+            <div class="status-label">${o.package} — ${o.orderId}</div>
+            <div class="status-sub">${meta.label} · ${time}</div>
+          </div>
+        </div>`;
+    }).join("");
+  }
+
+  statusForm.addEventListener("submit", async function(e){
+    e.preventDefault();
+    const email = statusEmailInput.value.trim();
+    if (!isValidEmail(email)){
+      toast("Masukkan email yang valid", "error");
+      return;
+    }
+    statusBox.innerHTML = '<div id="statusEmpty">Memuat status...</div>';
+    try {
+      const res = await fetch(`${API_BASE}/api/order/status?email=${encodeURIComponent(email)}`);
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success){
+        renderOrders(data.data);
+      } else {
+        statusBox.innerHTML = `<div id="statusEmpty">${data.message || "Gagal memuat status."}</div>`;
+      }
+    } catch (err){
+      statusBox.innerHTML = '<div id="statusEmpty">Gagal terhubung ke server.</div>';
+    }
+  });
+
+  /* ===== Order form submit ===== */
+  const form = document.getElementById("orderForm");
+  const nameField = document.getElementById("nameField");
+  const emailField = document.getElementById("emailField");
+  const nameInput = document.getElementById("nameInput");
+  const emailInput = document.getElementById("emailInput");
+  const optionsInput = document.getElementById("optionsInput");
+  const urlInput = document.getElementById("urlInput");
+  const orderBtn = document.getElementById("orderBtn");
+  const orderSpinner = document.getElementById("orderSpinner");
+  const orderBtnText = document.getElementById("orderBtnText");
+
+  function setLoading(loading){
+    orderBtn.disabled = loading;
+    orderSpinner.classList.toggle("show", loading);
+    orderBtnText.textContent = loading ? "MEMPROSES..." : "ORDER SEKARANG";
+  }
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    let valid = true;
+    nameField.classList.remove("invalid");
+    emailField.classList.remove("invalid");
+
+    if (nameInput.value.trim().length < 2){
+      nameField.classList.add("invalid");
+      valid = false;
+    }
+    if (!isValidEmail(emailInput.value.trim())){
+      emailField.classList.add("invalid");
+      valid = false;
+    }
+    if (!valid){
+      toast("Periksa kembali data yang kamu masukkan", "error");
+      return;
+    }
+
+    const payload = {
+      email: emailInput.value.trim(),
+      package: packageSelect.value,
+      options: optionsInput.value.trim(),
+      url: urlInput.value.trim()
+    };
+    const packageLabelMap = { "7-days": "7 Hari", "30-days": "30 Hari", "90-days": "90 Hari" };
+    const packageLabel = packageLabelMap[payload.package] || payload.package;
+
+    setLoading(true);
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 20000);
+
+      const res = await fetch(`${API_BASE}/api/order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success){
+        toast(`Order dibuat! ID: ${data.data.orderId}`, "success", 5000);
+        form.reset();
+        packageSelect.value = payload.package;
+        statusEmailInput.value = payload.email;
+        statusForm.dispatchEvent(new Event("submit"));
+        document.getElementById("status").scrollIntoView({ behavior: "smooth" });
+      } else {
+        toast(data.message || "Order gagal dibuat", "error");
+      }
+
+    } catch (err){
+      const msg = err.name === "AbortError" ? "Waktu tunggu habis, coba lagi" : "Terjadi kesalahan koneksi";
+      toast(msg, "error");
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  /* ===== Scroll reveal ===== */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".glass").forEach(el => observer.observe(el));
+
+})();
+</script>
+
+</body>
+</html>
